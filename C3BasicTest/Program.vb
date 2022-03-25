@@ -1,3 +1,9 @@
+﻿Imports System.Net
+Imports System.Text
+Imports C3SharpInterface
+Imports C3SharpInterface.Requests
+Imports C3SharpInterface.Responses
+
 ' Copyright (c) 2020-2022 Dmitry Lavygin <vdm.inbox@gmail.com>
 ' S.P. Kapitsa Research Institute of Technology of Ulyanovsk State University.
 ' All rights reserved.
@@ -26,12 +32,6 @@
 ' THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 ' (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 ' OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-﻿Imports System.Net
-Imports System.Text
-Imports C3SharpInterface
-Imports C3SharpInterface.Requests
-Imports C3SharpInterface.Responses
-
 
 Module Program
 
