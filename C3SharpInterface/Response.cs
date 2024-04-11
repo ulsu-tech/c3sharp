@@ -107,6 +107,12 @@ namespace C3SharpInterface
                 case Command.FileReadContent:
                     result = new Responses.FileReadResponse();
                     break;
+                case Command.VolumeGetProperties:
+                    result = new Responses.VolumePropertiesResponse();
+                    break;
+                case Command.VolumeList:
+                    result = new Responses.VolumeListResponse();
+                    break;
                 default:
                     result = new Response();
                     break;
@@ -248,6 +254,60 @@ namespace C3SharpInterface
             data |= (uint) Payload[_offset++];
             data <<= 8;
             data |= (uint) Payload[_offset++];
+        }
+
+        public void Extract(out long data)
+        {
+            data = 0;
+
+            if (!_valid || _offset + sizeof(long) > _size)
+            {
+                _valid = false;
+                return;
+            }
+
+            data = (long) Payload[_offset++];
+            data <<= 8;
+            data |= (long) Payload[_offset++];
+            data <<= 8;
+            data |= (long) Payload[_offset++];
+            data <<= 8;
+            data |= (long) Payload[_offset++];
+            data <<= 8;
+            data |= (long)Payload[_offset++];
+            data <<= 8;
+            data |= (long)Payload[_offset++];
+            data <<= 8;
+            data |= (long)Payload[_offset++];
+            data <<= 8;
+            data |= (long)Payload[_offset++];
+        }
+
+        public void Extract(out ulong data)
+        {
+            data = 0;
+
+            if (!_valid || _offset + sizeof(ulong) > _size)
+            {
+                _valid = false;
+                return;
+            }
+
+            data = (ulong) Payload[_offset++];
+            data <<= 8;
+            data |= (ulong) Payload[_offset++];
+            data <<= 8;
+            data |= (ulong) Payload[_offset++];
+            data <<= 8;
+            data |= (ulong) Payload[_offset++];
+            data <<= 8;
+            data |= (ulong) Payload[_offset++];
+            data <<= 8;
+            data |= (ulong) Payload[_offset++];
+            data <<= 8;
+            data |= (ulong) Payload[_offset++];
+            data <<= 8;
+            data |= (ulong) Payload[_offset++];
         }
 
         public void ExtractAscii(out string data)

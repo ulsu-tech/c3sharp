@@ -148,10 +148,44 @@ namespace C3SharpInterface
                 _valid = false;
                 return;
             }
-            Payload[_offset++] = (byte) ((value >> 24) & 0x000000FF);
-            Payload[_offset++] = (byte) ((value >> 16) & 0x000000FF);
-            Payload[_offset++] = (byte) ((value >> 8) & 0x000000FF);
-            Payload[_offset++] = (byte) (value & 0x000000FF);
+            Payload[_offset++] = (byte) ((value >> 24) & 0x000000FFU);
+            Payload[_offset++] = (byte) ((value >> 16) & 0x000000FFU);
+            Payload[_offset++] = (byte) ((value >> 8) & 0x000000FFU);
+            Payload[_offset++] = (byte) (value & 0x000000FFU);
+        }
+
+        public void Append(long value)
+        {
+            if (!_valid || _offset + sizeof(long) > Payload.Length)
+            {
+                _valid = false;
+                return;
+            }
+            Payload[_offset++] = (byte) ((value >> 56) & 0x00000000000000FFL);
+            Payload[_offset++] = (byte) ((value >> 48) & 0x00000000000000FFL);
+            Payload[_offset++] = (byte) ((value >> 40) & 0x00000000000000FFL);
+            Payload[_offset++] = (byte) ((value >> 32) & 0x00000000000000FFL);
+            Payload[_offset++] = (byte) ((value >> 24) & 0x00000000000000FFL);
+            Payload[_offset++] = (byte) ((value >> 16) & 0x00000000000000FFL);
+            Payload[_offset++] = (byte) ((value >> 8) & 0x00000000000000FFL);
+            Payload[_offset++] = (byte) (value & 0x00000000000000FFL);
+        }
+
+        public void Append(ulong value)
+        {
+            if (!_valid || _offset + sizeof(ulong) > Payload.Length)
+            {
+                _valid = false;
+                return;
+            }
+            Payload[_offset++] = (byte) ((value >> 56) & 0x00000000000000FFUL);
+            Payload[_offset++] = (byte) ((value >> 48) & 0x00000000000000FFUL);
+            Payload[_offset++] = (byte) ((value >> 40) & 0x00000000000000FFUL);
+            Payload[_offset++] = (byte) ((value >> 32) & 0x00000000000000FFUL);
+            Payload[_offset++] = (byte) ((value >> 24) & 0x00000000000000FFUL);
+            Payload[_offset++] = (byte) ((value >> 16) & 0x00000000000000FFUL);
+            Payload[_offset++] = (byte) ((value >> 8) & 0x00000000000000FFUL);
+            Payload[_offset++] = (byte) (value & 0x00000000000000FFUL);
         }
 
         public void AppendAscii(string data)

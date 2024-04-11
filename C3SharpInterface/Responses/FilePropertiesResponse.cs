@@ -92,7 +92,7 @@ namespace C3SharpInterface.Responses
 
         private DateTime MakeDateTime(int low, int high, int bias)
         {
-            DateTime result = DateTime.FromFileTime(MakeLong(low, high));
+            DateTime result = DateTime.FromFileTimeUtc(MakeLong(low, high));
             return result + (new TimeSpan(0, bias, 0));
         }
 

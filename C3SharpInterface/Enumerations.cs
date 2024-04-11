@@ -100,11 +100,13 @@ namespace C3SharpInterface
         FileWriteContent = 29,
         FileReadContent = 30,
 
+        // Volume Handling
+        VolumeGetProperties = 31,
+        VolumeSetName = 32,
+        VolumeList = 33,
+        VolumeFormat = 34,
+
         // Reserved
-        Reserved31 = 31,
-        Reserved32 = 32,
-        Reserved33 = 33,
-        Reserved34 = 34,
         Reserved35 = 35,
         Reserved36 = 36,
         Reserved37 = 37,
@@ -368,5 +370,17 @@ namespace C3SharpInterface
         GetSize = 3,
         End = 4,
         Checksum = 5
+    };
+
+    public enum VolumeType
+    {
+        Unknown = 0,
+        KRC = 1,
+        Removeable = 2,
+        Fixed = 3,
+        CDRom = 4,
+        Remote = 5,
+        RAMDisk = 6,
+        Archive = 7
     };
 }
