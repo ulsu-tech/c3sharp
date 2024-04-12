@@ -104,9 +104,9 @@ namespace C3SharpInterface
         VolumeGetProperties = 31,
         VolumeSetName = 32,
         VolumeList = 33,
-        VolumeFormat = 34,
 
         // Reserved
+        Reserved34 = 34,
         Reserved35 = 35,
         Reserved36 = 36,
         Reserved37 = 37,
